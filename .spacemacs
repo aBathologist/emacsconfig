@@ -7,15 +7,15 @@
 You should not put any user code in this function besides modifying the variable
 values."
   (setq-default
-   ;; Base distribution to use. This is a layer contained in the directory
-   ;; `+distribution'. For now available distributions are `spacemacs-base'
-   ;; or `spacemacs'. (default 'spacemacs)
+  ;; Base distribution to use. This is a layer contained in the directory
+  ;; `+distribution'. For now available distributions are `spacemacs-base'
+  ;; or `spacemacs'. (default 'spacemacs)
    dotspacemacs-distribution 'spacemacs
-   ;; List of additional paths where to look for configuration layers.
-   ;; Paths must have a trailing slash (i.e. `~/.mycontribs/')
+  ;; List of additional paths where to look for configuration layers.
+  ;; Paths must have a trailing slash (i.e. `~/.mycontribs/')
    dotspacemacs-configuration-layer-path '()
-   ;; List of configuration layers to load. If it is the symbol `all' instead
-   ;; of a list then all discovered layers will be installed.
+  ;; List of configuration layers to load. If it is the symbol `all' instead
+  ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
    '(
      ;; ----------------------------------------------------------------
@@ -38,7 +38,14 @@ values."
      version-control
      sml
      osx
-     deft )
+     deft
+     haskell
+     (ranger :variables
+             ranger-show-preview t
+             ranger-cleanup-on-disable t
+             ranger-cleanup-eagerly t
+             )
+     )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages then consider to create a layer, you can also put the
@@ -46,7 +53,8 @@ values."
    dotspacemacs-additional-packages
    '(
      graphviz-dot-mode
-     org-ref )
+     org-ref
+    )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -220,6 +228,9 @@ layers configuration. You are free to put any user code."
   ;; free up the right option key
   (setq mac-right-option-modifier nil)
 
+  ;; Save buffers when frame looses focus
+  (add-hook 'focus-out-hook (lambda () (save-some-buffers t)))
+
   ;; (global-set-key (kbd "s-return") 'evil-insert-line-below)
 
   ;; ----------------------------------
@@ -272,6 +283,14 @@ layers configuration. You are free to put any user code."
   ;;       '(("p" projectile-project-p)))
 
   ;; ----------------------------------
+  ;; VIMISH-FOLD
+
+  ;; (global-set-key (kbd "s-l") 'vimish-fold-avy)
+  ;; (global-set-key (kbd "s-F") 'vimish-fold)
+  ;; (global-set-key (kbd "s-d") 'vimish-fold-delete)
+  ;; (global-set-key (kbd "s-f") 'vimish-fold-toggle)
+
+  ;; ----------------------------------
   ;; MISC
 
   ;; set default box for deft-mode
@@ -289,7 +308,7 @@ layers configuration. You are free to put any user code."
  ;; If there is more than one, they won't work right.
  '(org-agenda-files
    (quote
-    ("~/Programming/strand/employeedb/project.org" "~/Dropbox/remarks/scheme.org" "~/org/group/1st_critique_reading.org" "~/Documents/Volunteer Projects/Coding Made Easy 2016/project.org" "/usr/local/opt/teyjus/project.org" "~/org/notes.org"))))
+    ("~/Dropbox/org/terminology.org" "~/Programming/strand/employeedb/project.org" "~/Dropbox/remarks/scheme.org" "~/org/group/1st_critique_reading.org" "~/Documents/Volunteer Projects/Coding Made Easy 2016/project.org" "/usr/local/opt/teyjus/project.org" "~/org/notes.org"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
