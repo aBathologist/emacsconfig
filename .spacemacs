@@ -1,4 +1,5 @@
 ;; -*- mode: emacs-lisp -*-
+
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
 
@@ -25,26 +26,28 @@ values."
      ;; ----------------------------------------------------------------
      auto-completion
      better-defaults
+     deft
      emacs-lisp
      git
+     haskell
+     html
      markdown
      org
-     html
+     ocaml
+     osx
+     python
+     (ranger :variables
+             ranger-show-preview t
+             ranger-cleanup-on-disable t)
+     search-engine
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
+     shell-scripts
+     sml
      spell-checking
      syntax-checking
      version-control
-     sml
-     osx
-     deft
-     haskell
-     (ranger :variables
-             ranger-show-preview t
-             ranger-cleanup-on-disable t
-             ranger-cleanup-eagerly t
-             )
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -104,7 +107,7 @@ values."
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 13
+                               :size 12
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -308,7 +311,10 @@ layers configuration. You are free to put any user code."
  ;; If there is more than one, they won't work right.
  '(org-agenda-files
    (quote
-    ("~/Dropbox/org/terminology.org" "~/Programming/strand/employeedb/project.org" "~/Dropbox/remarks/scheme.org" "~/org/group/1st_critique_reading.org" "~/Documents/Volunteer Projects/Coding Made Easy 2016/project.org" "/usr/local/opt/teyjus/project.org" "~/org/notes.org"))))
+    ("~/Dropbox/org/terminology.org" "~/Programming/strand/employeedb/project.org" "~/Dropbox/remarks/scheme.org" "~/org/group/1st_critique_reading.org" "~/Documents/Volunteer Projects/Coding Made Easy 2016/project.org" "/usr/local/opt/teyjus/project.org" "~/org/notes.org")))
+ '(package-selected-packages
+   (quote
+    (utop tuareg caml ocp-indent merlin fish-mode xterm-color ws-butler window-numbering web-mode volatile-highlights vi-tilde-fringe toc-org tagedit spaceline powerline smooth-scrolling smeargle slim-mode shm shell-pop scss-mode sass-mode reveal-in-osx-finder restart-emacs ranger rainbow-delimiters pyvenv pytest pyenv-mode py-yapf popwin pip-requirements persp-mode pcre2el pbcopy paradox spinner page-break-lines osx-trash orgit org-repo-todo org-ref key-chord hydra ivy helm-bibtex biblio parsebib biblio-core org-present org-pomodoro alert log4e gntp org-plus-contrib org-bullets open-junk-file ob-sml sml-mode neotree multi-term move-text mmm-mode markdown-toc markdown-mode magit-gitflow macrostep lorem-ipsum linum-relative leuven-theme less-css-mode launchctl jade-mode info+ indent-guide ido-vertical-mode hy-mode hungry-delete htmlize hl-todo hindent highlight-parentheses highlight-numbers parent-mode highlight-indentation help-fns+ helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make projectile helm-gitignore request helm-flyspell helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag haskell-snippets haml-mode graphviz-dot-mode google-translate golden-ratio gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter gh-md flycheck-pos-tip flycheck-haskell flycheck pkg-info epl flx-ido flx fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit magit magit-popup git-commit with-editor evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-args evil-anzu anzu eval-sexp-fu highlight eshell-prompt-extras esh-help engine-mode emmet-mode elisp-slime-nav diff-hl deft define-word cython-mode company-web web-completion-data company-statistics company-quickhelp pos-tip company-ghc ghc haskell-mode company-cabal company-anaconda company cmm-mode clean-aindent-mode buffer-move bracketed-paste auto-yasnippet yasnippet auto-highlight-symbol auto-dictionary auto-compile packed anaconda-mode pythonic f dash s aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core async ac-ispell auto-complete popup quelpa package-build use-package which-key bind-key bind-map evil spacemacs-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
